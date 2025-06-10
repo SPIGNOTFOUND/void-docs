@@ -12,12 +12,12 @@
             box-sizing: border-box;
         }
 
-        /* Typography */
+        /* Typography and Base Styles */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            color: #ffffff;
+            background-color: #000000;
             padding: 20px;
         }
 
@@ -29,21 +29,97 @@
             gap: 30px;
         }
 
+        /* Header */
+        .header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMDAwMDAwIi8+PHRleHQgeD0iNjAwIiB5PSIyMDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI0MCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmZmZmYiPtdMPC90ZXh0Pjwvc3ZnPg==');
+            background-size: cover;
+            border-radius: 8px;
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(40,0,80,0.7) 100%);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            width: 80px;
+            margin: 0 auto 20px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
         /* Sidebar */
+        .sidebar-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            color: white;
+            font-size: 20px;
+        }
+
         .sidebar {
             width: 300px;
-            background: white;
+            background: rgba(20, 20, 30, 0.95);
             border-radius: 8px;
             padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 20px;
-            height: fit-content;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: fixed;
+            top: 80px;
+            left: -350px;
+            height: calc(100vh - 100px);
+            transition: left 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .sidebar.active {
+            left: 0;
         }
 
         .sidebar h3 {
-            margin-bottom: 15px;
-            color: #2d3748;
+            margin-bottom: 20px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar h3 img {
+            width: 30px;
+            margin-right: 10px;
         }
 
         .sidebar ul {
@@ -56,36 +132,36 @@
 
         .sidebar a {
             text-decoration: none;
-            color: #4a5568;
+            color: #cccccc;
             display: block;
-            padding: 8px 10px;
+            padding: 10px;
             border-radius: 4px;
-            transition: background 0.2s;
+            transition: all 0.2s;
         }
 
         .sidebar a:hover, .sidebar a.active {
-            background: #ebf4ff;
-            color: #2b6cb0;
+            background: rgba(255, 255, 255, 0.1);
+            color: #bb86fc;
         }
 
         /* Main Content */
         .content {
             flex: 1;
-            background: white;
+            background: rgba(30, 30, 40, 0.8);
             border-radius: 8px;
             padding: 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .content h1 {
-            color: #2d3748;
+            color: #ffffff;
             margin-bottom: 20px;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid #444444;
             padding-bottom: 10px;
         }
 
         .content h2 {
-            color: #4a5568;
+            color: #bb86fc;
             margin: 30px 0 15px;
         }
 
@@ -94,13 +170,18 @@
         }
 
         .content pre {
-            background: #1e293b;
-            color: #93c5fd;
+            background: #121212;
+            color: #bb86fc;
             padding: 15px;
             border-radius: 6px;
             overflow-x: auto;
             margin: 20px 0;
             font-family: 'JetBrains Mono', monospace;
+            border-left: 3px solid #bb86fc;
+        }
+
+        .content a {
+            color: #bb86fc;
         }
 
         .navigation {
@@ -111,23 +192,59 @@
 
         .nav-btn {
             padding: 8px 15px;
-            background: #edf2f7;
+            background: rgba(255, 255, 255, 0.1);
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-weight: 500;
+            color: white;
+            border: 1px solid #444444;
+            transition: all 0.2s;
         }
 
         .nav-btn:hover {
-            background: #e2e8f0;
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #bb86fc;
+        }
+
+        .btn-purple {
+            background: linear-gradient(45deg, #bb86fc, #6200ee);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-purple:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(187, 134, 252, 0.3);
         }
     </style>
 </head>
 <body>
+    <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+
+    <div class="header">
+        <div class="header-content">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgODAiPjxyZWN0IHdpZHRoPSIyNDAiIGhlaWdodD0iODAiIGZpbGw9IiMwMDAwMDAiLz48cGF0aCBkPSJNMjQwLDgwIEw4MCwzMjBMNTYsNjQgTDEyMCw4MCBMMjQwLDY0IEwyNjQsODBMMjQwLDgwIFoiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=" alt="Void Logo" class="logo">
+            <h1>VOID</h1>
+            <p>Powerful Protection and Management for your Discord Server</p>
+            <a href="#overview" class="btn-purple">Get Started</a>
+        </div>
+    </div>
+
     <div class="docs-container">
         <!-- Sidebar Navigation -->
-        <div class="sidebar">
-            <h3>Void Bot Docs</h3>
+        <div class="sidebar" id="sidebar">
+            <h3>
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgODAiPjxyZWN0IHdpZHRoPSIyNDAiIGhlaWdodD0iODAiIGZpbGw9IiMwMDAwMDAiLz48cGF0aCBkPSJNMjQwLDgwIEw4MCwzMjBMNTYsNjQgTDEyMCw4MCBMMjQwLDY0IEwyNjQsODBMMjQwLDgwIFoiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=" alt="V" width="24">
+                Void Bot Docs
+            </h3>
             <ul>
                 <li><a href="#overview" class="active">Overview</a></li>
                 <li><a href="#getting-started">Getting Started</a></li>
@@ -150,7 +267,7 @@
             <ul>
                 <li><strong>Advanced Raid Protection:</strong> Utilizing cutting-edge algorithms to detect and prevent server raids, ensuring your community remains safe from harm.</li>
                 <li><strong>Comprehensive Logging:</strong> Detailed logs of all actions and events, providing complete transparency and accountability within your server.</li>
-                <li><strong>Global Ban System:</strong> Report users through our dedicated server owner forum, and after proper validation, our team issue global bans to maintain safety across communities with proper proofs and links attached for everyone to refer to, to become a part of this join the support server and head towards support channel and create a ticket.</li>
+                <li><strong>Global Ban System:</strong> Report users through our dedicated server owner forum, and after proper validation, our team issues global bans to maintain safety across communities with proper proofs and links attached for everyone to refer to. To become a part of this, join the support server and head to the support channel to create a ticket.</li>
                 <li><strong>Server Backups:</strong> Monthly server backups to ensure you can recover your server settings and data in case of unexpected issues.</li>
                 <li><strong>Customizable Cogs:</strong> Load or unload specific features based on your server's needs, giving you full control over what functionalities are active.</li>
                 <li><strong>Fun and Roleplay Commands:</strong> Over 70 fun commands and more than 100 pickup line themes to keep your server engaging and entertaining.</li>
@@ -209,6 +326,22 @@
     </div>
 
     <script>
+        // Sidebar toggle functionality
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        // Close sidebar on navigation item click
+        const navItems = document.querySelectorAll('.sidebar a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+            });
+        });
+
         // Simple navigation between sections
         function navigate(direction) {
             const sections = ['overview', 'getting-started', 'core-concepts', 'api-reference', 'troubleshooting'];
@@ -226,7 +359,7 @@
             document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
             document.querySelector(`.sidebar a[href="#${sections[nextIndex]}"]`).classList.add('active');
             
-            // Scroll to section (in a real implementation you would load different content)
+            // Scroll to section
             document.getElementById(sections[nextIndex]).scrollIntoView({ behavior: 'smooth' });
         }
     </script>
