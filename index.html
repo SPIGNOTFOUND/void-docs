@@ -239,6 +239,12 @@
             margin-top: 0;
             margin-bottom: 15px;
         }
+
+        /* Main Page Button */
+        .main-btn-container {
+            text-align: center;
+            margin: 30px 0;
+        }
     </style>
 </head>
 <body>
@@ -249,7 +255,9 @@
             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgODAiPjxyZWN0IHdpZHRoPSIyNDAiIGhlaWdodD0iODAiIGZpbGw9IiMwMDAwMDAiLz48cGF0aCBkPSJNMjQwLDgwIEw4MCwzMjBMNTYsNjQgTDEyMCw4MCBMMjQwLDY0IEwyNjQsODBMMjQwLDgwIFoiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=" alt="Void Logo" class="logo">
             <h1>VOID</h1>
             <p>Powerful Protection and Management for your Discord Server</p>
-            <a href="#overview" class="btn-purple">Get Started</a>
+            <div class="main-btn-container">
+                <a href="#the-void" class="btn-purple">Discover The Void</a>
+            </div>
         </div>
     </div>
 
@@ -261,11 +269,9 @@
                 Void Bot Docs
             </h3>
             <ul>
-                <li><a href="#overview" class="active">Overview</a></li>
+                <li><a href="#the-void" class="active">The Void</a></li>
+                <li><a href="#key-features">Key Features</a></li>
                 <li><a href="#getting-started">Getting Started</a></li>
-                <li><a href="#prerequisites">Prerequisites</a></li>
-                <li><a href="#installation">Installation</a></li>
-                <li><a href="#initial-setup">Initial Setup</a></li>
                 <li><a href="#core-concepts">Core Concepts</a></li>
                 <li><a href="#api-reference">API Reference</a></li>
                 <li><a href="#troubleshooting">Troubleshooting</a></li>
@@ -274,14 +280,16 @@
 
         <!-- Main Content Area -->
         <div class="content">
-            <h1 id="overview">Overview</h1>
+            <h1 id="the-void">The Void</h1>
             <p>Welcome to the Void Bot documentation! Void Bot was initially developed by our team as a solution to protect a specific server from raids. The bot's exceptional performance and user-friendly features quickly became evident. Witnessing its success and the positive impact it had on server security, we made the decision to expand its capabilities and offer it globally.</p>
 
             <p>Void Bot stands as a versatile, powerful companion designed to protect, entertain, and streamline your Discord server experience. Our commitment to providing premium features for free is rooted in the belief that security and functionality should be accessible to everyone, not just those willing to pay for it.</p>
 
-            <p>What sets Void Bot apart from other solutions on the market? Let's break it down:</p>
+            <p>Our unique approach doesn't stop there. With Void Bot, you get a companion that can handle anything from managing grinder funds to keeping your pool safe. It's like having a multitool for your Discord server—ready to assist with whatever you throw at it.</p>
 
-            <h2>Key Features</h2>
+            <p>So, whether you're looking to enhance your server's security, add some fun elements, or streamline moderation, Void Bot is here to be your ultimate Discord companion. Let's get started on making your server the best it can be!</p>
+
+            <h1 id="key-features">Key Features</h1>
             <ul>
                 <li><strong>Advanced Raid Protection:</strong> Utilizing cutting-edge algorithms to detect and prevent server raids, ensuring your community remains safe from harm.</li>
                 <li><strong>Comprehensive Logging:</strong> Detailed logs of all actions and events, providing complete transparency and accountability within your server.</li>
@@ -291,12 +299,6 @@
                 <li><strong>Fun and Roleplay Commands:</strong> Over 70 fun commands and more than 100 pickup line themes to keep your server engaging and entertaining.</li>
                 <li><strong>Advanced Staff Toolkit:</strong> Comprehensive moderation tools designed to make managing your server easier and more efficient.</li>
             </ul>
-
-            <p>But why choose Void Bot over other options available? Good question! Most existing bots, like Wick or others, often fall short when it comes to providing proper logging and up-to-date features. Many are stuck in the past, offering outdated solutions. Void Bot, on the other hand, is built with modern needs in mind. We believe security is a fundamental right for every server member, not a premium service to monetize. That's why we've made all safety-related features completely free.</p>
-
-            <p>Our unique approach doesn't stop there. With Void Bot, you get a companion that can handle anything from managing grinder funds to keeping your pool safe. It's like having a multitool for your Discord server—ready to assist with whatever you throw at it.</p>
-
-            <p>So, whether you're looking to enhance your server's security, add some fun elements, or streamline moderation, Void Bot is here to be your ultimate Discord companion. Let's get started on making your server the best it can be!</p>
 
             <h1 id="getting-started">Getting Started</h1>
             <p>Ready to bring Void Bot into your server and experience its full potential? Follow these detailed steps to get started on the right foot.</p>
@@ -368,8 +370,8 @@
 
         // Simple navigation between sections
         function navigate(direction) {
-            const sections = ['overview', 'getting-started', 'prerequisites', 'installation', 'initial-setup', 'core-concepts', 'api-reference', 'troubleshooting'];
-            const currentSection = document.querySelector('.content h1, .content h3').id;
+            const sections = ['the-void', 'key-features', 'getting-started', 'core-concepts', 'api-reference', 'troubleshooting'];
+            const currentSection = document.querySelector('.content h1').id;
             const currentIndex = sections.indexOf(currentSection);
             
             let nextIndex;
