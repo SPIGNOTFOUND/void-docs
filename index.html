@@ -224,6 +224,21 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(187, 134, 252, 0.3);
         }
+
+        /* Thread-like sections */
+        .thread {
+            background: rgba(40, 40, 60, 0.6);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #bb86fc;
+        }
+
+        .thread h3 {
+            color: #bb86fc;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
@@ -248,6 +263,9 @@
             <ul>
                 <li><a href="#overview" class="active">Overview</a></li>
                 <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#prerequisites">Prerequisites</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#initial-setup">Initial Setup</a></li>
                 <li><a href="#core-concepts">Core Concepts</a></li>
                 <li><a href="#api-reference">API Reference</a></li>
                 <li><a href="#troubleshooting">Troubleshooting</a></li>
@@ -283,34 +301,40 @@
             <h1 id="getting-started">Getting Started</h1>
             <p>Ready to bring Void Bot into your server and experience its full potential? Follow these detailed steps to get started on the right foot.</p>
 
-            <h2>Prerequisites</h2>
-            <p>Before inviting Void Bot to your server, ensure you meet the following requirements:</p>
-            <ul>
-                <li>You are the server owner or have administrator permissions. If you're not the main owner and the main owner is unavailable, you can still set up the bot by joining our support server where special whitelists can be created.</li>
-                <li>The bot's role is set as the highest in your server hierarchy. This ensures Void Bot has the necessary permissions to function effectively and protect your server.</li>
-                <li>You have a Discord account with access to the server where you want to add Void Bot.</li>
-            </ul>
+            <div class="thread">
+                <h3 id="prerequisites">Prerequisites</h3>
+                <p>Before inviting Void Bot to your server, ensure you meet the following requirements:</p>
+                <ul>
+                    <li>You are the server owner or have administrator permissions. If you're not the main owner and the main owner is unavailable, you can still set up the bot by joining our support server where special whitelists can be created.</li>
+                    <li>The bot's role is set as the highest in your server hierarchy. This ensures Void Bot has the necessary permissions to function effectively and protect your server.</li>
+                    <li>You have a Discord account with access to the server where you want to add Void Bot.</li>
+                </ul>
+            </div>
 
-            <h2>Installation</h2>
-            <p>Inviting Void Bot to your server is a breeze—easier than mixing sugar in water, we promise! Follow these simple steps:</p>
-            <ol>
-                <li>Visit the <a href="YOUR_BOT_INVITE_LINK">Void Bot invitation page</a>. This is where you'll find everything you need to add the bot to your server.</li>
-                <li>Click the "Add to Server" button. This will initiate the process of inviting Void Bot to your Discord server.</li>
-                <li>Select your server from the dropdown menu. If you have multiple servers, make sure to pick the right one where you want Void Bot to reside.</li>
-                <li>Grant the necessary permissions. Don't worry—we only request the permissions essential for Void Bot to function properly and keep your server safe.</li>
-                <li>Click "Authorize" and watch the magic happen! Void Bot will join your server and begin setting things up for you.</li>
-            </ol>
+            <div class="thread">
+                <h3 id="installation">Installation</h3>
+                <p>Inviting Void Bot to your server is a breeze—easier than mixing sugar in water, we promise! Follow these simple steps:</p>
+                <ol>
+                    <li>Visit the <a href="YOUR_BOT_INVITE_LINK">Void Bot invitation page</a>. This is where you'll find everything you need to add the bot to your server.</li>
+                    <li>Click the "Add to Server" button. This will initiate the process of inviting Void Bot to your Discord server.</li>
+                    <li>Select your server from the dropdown menu. If you have multiple servers, make sure to pick the right one where you want Void Bot to reside.</li>
+                    <li>Grant the necessary permissions. Don't worry—we only request the permissions essential for Void Bot to function properly and keep your server safe.</li>
+                    <li>Click "Authorize" and watch the magic happen! Void Bot will join your server and begin setting things up for you.</li>
+                </ol>
+            </div>
 
-            <h2>Initial Setup</h2>
-            <p>Once Void Bot is in your server, it's time to configure it to your specific needs. Follow these steps for a smooth initial setup:</p>
-            <ol>
-                <li>Run the command <code>v-setup</code> in your server. This command triggers an ephemeral guide that will walk you through the entire setup process, ensuring you don't miss any crucial steps.</li>
-                <li>The bot will automatically create all necessary logging channels. These channels are where you'll find detailed records of all actions and events happening in your server, providing complete transparency and accountability.</li>
-                <li>A quarantine role will be created by the bot. This role is used to isolate potentially problematic users or situations, helping to maintain server safety without disrupting the overall community experience.</li>
-                <li>Void Bot will lock its (quarantine role) position right below its own role to ensure except Main owner nobody can mess up things. This ensures the bot has the necessary authority to execute its protective functions effectively.</li>
-                <li>If you're on a special whitelisted server (due to the main owner being unavailable), the bot will ping the person who initiated the setup instead of the server owner for specific actions. This ensures continuity of management even in such cases.</li>
-                <li>Follow the detailed guide provided by the bot to fine-tune your settings. We've added extra steps and explanations to make the setup process as smooth and user-friendly as possible.</li>
-            </ol>
+            <div class="thread">
+                <h3 id="initial-setup">Initial Setup</h3>
+                <p>Once Void Bot is in your server, it's time to configure it to your specific needs. Follow these steps for a smooth initial setup:</p>
+                <ol>
+                    <li>Run the command <code>v-setup</code> in your server. This command triggers an ephemeral guide that will walk you through the entire setup process, ensuring you don't miss any crucial steps.</li>
+                    <li>The bot will automatically create all necessary logging channels. These channels are where you'll find detailed records of all actions and events happening in your server, providing complete transparency and accountability.</li>
+                    <li>A quarantine role will be created by the bot. This role is used to isolate potentially problematic users or situations, helping to maintain server safety without disrupting the overall community experience.</li>
+                    <li>Void Bot will lock its (quarantine role) position right below its own role to ensure except Main owner nobody can mess up things. This ensures the bot has the necessary authority to execute its protective functions effectively.</li>
+                    <li>If you're on a special whitelisted server (due to the main owner being unavailable), the bot will ping the person who initiated the setup instead of the server owner for specific actions. This ensures continuity of management even in such cases.</li>
+                    <li>Follow the detailed guide provided by the bot to fine-tune your settings. We've added extra steps and explanations to make the setup process as smooth and user-friendly as possible.</li>
+                </ol>
+            </div>
 
             <p>One of the coolest features of Void Bot is its customizable nature. You can choose to load or unload specific cogs (features) based on what your server needs. For example, if you're running a social server focused on community building, you might not need the grinder system. With a simple command, you can disable it. This level of customization puts you in full control, allowing you to tailor Void Bot to perfectly suit your server's personality and requirements.</p>
 
@@ -344,8 +368,8 @@
 
         // Simple navigation between sections
         function navigate(direction) {
-            const sections = ['overview', 'getting-started', 'core-concepts', 'api-reference', 'troubleshooting'];
-            const currentSection = document.querySelector('.content h1').id;
+            const sections = ['overview', 'getting-started', 'prerequisites', 'installation', 'initial-setup', 'core-concepts', 'api-reference', 'troubleshooting'];
+            const currentSection = document.querySelector('.content h1, .content h3').id;
             const currentIndex = sections.indexOf(currentSection);
             
             let nextIndex;
