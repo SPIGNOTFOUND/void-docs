@@ -226,6 +226,18 @@
         .section-content.active {
             display: block;
         }
+
+        .content-box {
+            background: rgba(40, 40, 60, 0.6);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #444444;
+        }
+
+        .thread {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -262,21 +274,25 @@
         <!-- Main Content Area -->
         <div class="content">
             <div id="the-void" class="section-content active">
-                <h1>The Void</h1>
-                <p>Welcome to the Void Bot documentation! Void Bot was initially developed by our team as a solution to protect a specific server from raids. The bot's exceptional performance and user-friendly features quickly became evident. Witnessing its success and the positive impact it had on server security, we made the decision to expand its capabilities and offer it globally.</p>
+                <div class="content-box">
+                    <h1>The Void</h1>
+                    <p>Welcome to the Void Bot documentation! Void Bot was initially developed by our team as a solution to protect a specific server from raids. The bot's exceptional performance and user-friendly features quickly became evident. Witnessing its success and the positive impact it had on server security, we made the decision to expand its capabilities and offer it globally.</p>
 
-                <p>Void Bot stands as a versatile, powerful companion designed to protect, entertain, and streamline your Discord server experience. Our commitment to providing premium features for free is rooted in the belief that security and functionality should be accessible to everyone, not just those willing to pay for it.</p>
+                    <p>Void Bot stands as a versatile, powerful companion designed to protect, entertain, and streamline your Discord server experience. Our commitment to providing premium features for free is rooted in the belief that security and functionality should be accessible to everyone, not just those willing to pay for it.</p>
 
-                <p>Our unique approach doesn't stop there. With Void Bot, you get a companion that can handle anything from managing grinder funds to keeping your pool safe. It's like having a multitool for your Discord server—ready to assist with whatever you throw at it.</p>
+                    <p>Our unique approach doesn't stop there. With Void Bot, you get a companion that can handle anything from managing grinder funds to keeping your pool safe. It's like having a multitool for your Discord server—ready to assist with whatever you throw at it.</p>
 
-                <p>So, whether you're looking to enhance your server's security, add some fun elements, or streamline moderation, Void Bot is here to be your ultimate Discord companion.</p>
+                    <p>So, whether you're looking to enhance your server's security, add some fun elements, or streamline moderation, Void Bot is here to be your ultimate Discord companion.</p>
+                </div>
             </div>
 
             <div id="getting-started" class="section-content">
-                <h1>Getting Started</h1>
-                <p>Ready to bring Void Bot into your server and experience its full potential? Follow these detailed steps to get started on the right foot.</p>
+                <div class="content-box">
+                    <h1>Getting Started</h1>
+                    <p>Ready to bring Void Bot into your server and experience its full potential? Follow these detailed steps to get started on the right foot.</p>
+                </div>
 
-                <div class="thread">
+                <div class="content-box thread">
                     <h3>Prerequisites</h3>
                     <p>Before inviting Void Bot to your server, ensure you meet the following requirements:</p>
                     <ul>
@@ -286,7 +302,7 @@
                     </ul>
                 </div>
 
-                <div class="thread">
+                <div class="content-box thread">
                     <h3>Installation</h3>
                     <p>Inviting Void Bot to your server is a breeze—easier than mixing sugar in water, we promise! Follow these simple steps:</p>
                     <ol>
@@ -298,7 +314,7 @@
                     </ol>
                 </div>
 
-                <div class="thread">
+                <div class="content-box thread">
                     <h3>Initial Setup</h3>
                     <p>Once Void Bot is in your server, it's time to configure it to your specific needs. Follow these steps for a smooth initial setup:</p>
                     <ol>
@@ -313,16 +329,18 @@
             </div>
 
             <div id="key-features" class="section-content">
-                <h1>Key Features</h1>
-                <ul>
-                    <li><strong>Advanced Raid Protection:</strong> Utilizing cutting-edge algorithms to detect and prevent server raids, ensuring your community remains safe from harm.</li>
-                    <li><strong>Comprehensive Logging:</strong> Detailed logs of all actions and events, providing complete transparency and accountability within your server.</li>
-                    <li><strong>Global Ban System:</strong> Report users through our dedicated server owner forum, and after proper validation, our team issues global bans to maintain safety across communities with proper proofs and links attached for everyone to refer to. To become a part of this, join the support server and head to the support channel to create a ticket.</li>
-                    <li><strong>Server Backups:</strong> Monthly server backups to ensure you can recover your server settings and data in case of unexpected issues.</li>
-                    <li><strong>Customizable Cogs:</strong> Load or unload specific features based on your server's needs, giving you full control over what functionalities are active.</li>
-                    <li><strong>Fun and Roleplay Commands:</strong> Over 70 fun commands and more than 100 pickup line themes to keep your server engaging and entertaining.</li>
-                    <li><strong>Advanced Staff Toolkit:</strong> Comprehensive moderation tools designed to make managing your server easier and more efficient.</li>
-                </ul>
+                <div class="content-box">
+                    <h1>Key Features</h1>
+                    <ul>
+                        <li><strong>Advanced Raid Protection:</strong> Utilizing cutting-edge algorithms to detect and prevent server raids, ensuring your community remains safe from harm.</li>
+                        <li><strong>Comprehensive Logging:</strong> Detailed logs of all actions and events, providing complete transparency and accountability within your server.</li>
+                        <li><strong>Global Ban System:</strong> Report users through our dedicated server owner forum, and after proper validation, our team issues global bans to maintain safety across communities with proper proofs and links attached for everyone to refer to. To become a part of this, join the support server and head to the support channel to create a ticket.</li>
+                        <li><strong>Server Backups:</strong> Monthly server backups to ensure you can recover your server settings and data in case of unexpected issues.</li>
+                        <li><strong>Customizable Cogs:</strong> Load or unload specific features based on your server's needs, giving you full control over what functionalities are active.</li>
+                        <li><strong>Fun and Roleplay Commands:</strong> Over 70 fun commands and more than 100 pickup line themes to keep your server engaging and entertaining.</li>
+                        <li><strong>Advanced Staff Toolkit:</strong> Comprehensive moderation tools designed to make managing your server easier and more efficient.</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="navigation">
@@ -352,8 +370,8 @@
         // Simple navigation between sections
         function navigate(direction) {
             const sections = ['the-void', 'getting-started', 'key-features', 'core-concepts', 'api-reference', 'troubleshooting'];
-            const currentSection = document.querySelector('.section-content.active').id;
-            const currentIndex = sections.indexOf(currentSection);
+            const currentSection = document.querySelector('.section-content.active');
+            const currentIndex = sections.indexOf(currentSection.id);
             
             let nextIndex;
             if (direction === 'previous') {
