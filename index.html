@@ -499,7 +499,7 @@
             if (direction === 'previous') {
                 nextIndex = currentIndex > 0 ? currentIndex - 1 : sections.length - 1;
             } else {
-                nextIndex = currentIndex < sections.length - 1 ? currentTime + 1 : 0;
+                nextIndex = currentIndex < sections.length - 1 ? currentIndex + 1 : 0;
             }
             
             // Update active section in sidebar
